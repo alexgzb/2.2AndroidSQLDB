@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewValue"
+        android:layout_alignBottom="@+id/textViewValue"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="2014 10 18 17:54:33"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:width="150dp" />
+
+    <TextView
+        android:id="@+id/TextViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewValue"
+        android:layout_alignBottom="@+id/textViewValue"
+        android:layout_toLeftOf="@+id/textViewValue"
+        android:text="135920"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:width="75dp" />
+
+    <TextView
+        android:id="@+id/textViewValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/textViewDate"
+        android:text="135920"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:width="75dp" />
+
+</RelativeLayout>

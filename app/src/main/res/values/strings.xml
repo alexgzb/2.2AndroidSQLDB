@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Prime in SQLite DB</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="show">Show</string>
+    <string name="found">Found</string>
+    <string name="drop">Drop</string>
+    <string name="count">Current count</string>
+    <string name="row">Row</string>
+    <string name="value">Value</string>
+    <string name="time">Time of Storage</string>
+
+</resources>
