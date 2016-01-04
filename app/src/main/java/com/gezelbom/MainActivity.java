@@ -19,9 +19,9 @@ import android.widget.TextView;
  * from this number when the app starts the next time. When the maximum value
  * has been reached the sp file is cleared and the finder stops looking for more
  * primes. Uses Handler to print to the GUI thread.
- * 
+ *
  * @author Alex Gezelbom
- * 
+ *
  */
 public class MainActivity extends ListActivity {
 
@@ -116,7 +116,7 @@ public class MainActivity extends ListActivity {
 	/**
 	 * Change the buttons enabled status. Create and start a new Thread with the
 	 * Runnable PrimeCounter
-	 * 
+	 *
 	 * @param V
 	 *            The calling View
 	 */
@@ -143,7 +143,7 @@ public class MainActivity extends ListActivity {
 	/**
 	 * Method to act on the stop button. sends an interrupt signal to the
 	 * thread. Changes status on the buttons
-	 * 
+	 *
 	 * @param v
 	 *            The calling view
 	 */
@@ -155,7 +155,7 @@ public class MainActivity extends ListActivity {
 
 	/**
 	 * When drop button is clicked use the dbAdapter to clear the db
-	 * 
+	 *
 	 * @param v
 	 *            The calling view
 	 */
@@ -166,7 +166,7 @@ public class MainActivity extends ListActivity {
 	/**
 	 * When the show button is clicked Create a SimpleCursorAdapter and use the
 	 * dbAdapter to create a cursor and populate the list
-	 * 
+	 *
 	 * @param v
 	 *            The calling view
 	 */
@@ -196,9 +196,9 @@ public class MainActivity extends ListActivity {
 	 * thread Checks a given value if it is a prime and if so, it will create a
 	 * Message and send it to the handler and sleep for a short while so that
 	 * the GUI Thread has time to update the view Constructor takes a long
-	 * 
+	 *
 	 * @author Alex
-	 * 
+	 *
 	 */
 	class PrimeCounter implements Runnable {
 
@@ -206,7 +206,7 @@ public class MainActivity extends ListActivity {
 
 		/**
 		 * Constructor takes a long value as the starting number
-		 * 
+		 *
 		 * @param startValue
 		 */
 		public PrimeCounter(long startValue) {
@@ -239,10 +239,12 @@ public class MainActivity extends ListActivity {
 		public void check() {
 			try {
 				while (num < MAX) {
+                    long workingnum = num;
 					Message msg = Message.obtain();
 					if (isPrime(num)) {
-
-						msg.obj = num;
+                        if (workingnum == 1)    //Special case for 1
+                            workingnum = 2;
+						msg.obj = workingnum;
 						handler.sendMessage(msg);
 
 						Thread.sleep(500);
@@ -268,7 +270,7 @@ public class MainActivity extends ListActivity {
 
 		/**
 		 * Method that checks a candidate value whether it is a prime or not
-		 * 
+		 *
 		 * @param candidate
 		 *            the value to check
 		 * @return returns true if the value is a prime and false if not.

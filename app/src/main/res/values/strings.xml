@@ -5,9 +5,9 @@
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="show">Show</string>
-    <string name="found">Found</string>
+    <string name="found">Latest prime</string>
     <string name="drop">Drop</string>
-    <string name="count">Current count</string>
+    <string name="count">Primes found</string>
     <string name="row">Row</string>
     <string name="value">Value</string>
     <string name="time">Time of Storage</string>
